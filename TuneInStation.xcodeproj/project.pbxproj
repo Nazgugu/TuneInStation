@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		AE9563F51C4488A600379A5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9563F41C4488A600379A5E /* main.m */; };
 		AE9563F81C4488A600379A5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9563F71C4488A600379A5E /* AppDelegate.m */; };
-		AE9563FB1C4488A600379A5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9563FA1C4488A600379A5E /* ViewController.m */; };
-		AE9563FE1C4488A600379A5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9563FC1C4488A600379A5E /* Main.storyboard */; };
 		AE9564001C4488A600379A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9563FF1C4488A600379A5E /* Assets.xcassets */; };
 		AE9564031C4488A600379A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9564011C4488A600379A5E /* LaunchScreen.storyboard */; };
 		AE95640E1C4488A600379A5E /* TuneInStationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE95640D1C4488A600379A5E /* TuneInStationTests.m */; };
+		F911BBCCF46E932128F2B8C6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F85E175587FCCC262F25851 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +26,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2176FE72E828440407DAABF6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4F85E175587FCCC262F25851 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E0404CC156D308EC44DE0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AE9563F01C4488A600379A5E /* TuneInStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuneInStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9563F41C4488A600379A5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE9563F61C4488A600379A5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE9563F71C4488A600379A5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AE9563F91C4488A600379A5E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AE9563FA1C4488A600379A5E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AE9563FD1C4488A600379A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE9563FF1C4488A600379A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE9564021C4488A600379A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE9564041C4488A600379A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9564091C4488A600379A5E /* TuneInStationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuneInStationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE95640D1C4488A600379A5E /* TuneInStationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuneInStationTests.m; sourceTree = "<group>"; };
 		AE95640F1C4488A600379A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE9564191C448B4D00379A5E /* CommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		AE95641A1C448B4D00379A5E /* ValueKeyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueKeyDefine.h; sourceTree = "<group>"; };
+		AE95641B1C448B9B00379A5E /* TuneInStation-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuneInStation-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F911BBCCF46E932128F2B8C6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +63,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2650550AC06592CDE4396610 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76E0404CC156D308EC44DE0B /* Pods.debug.xcconfig */,
+				2176FE72E828440407DAABF6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		820125874A8A66A0300C9E8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F85E175587FCCC262F25851 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE9563E71C4488A600379A5E = {
 			isa = PBXGroup;
 			children = (
 				AE9563F21C4488A600379A5E /* TuneInStation */,
 				AE95640C1C4488A600379A5E /* TuneInStationTests */,
 				AE9563F11C4488A600379A5E /* Products */,
+				2650550AC06592CDE4396610 /* Pods */,
+				820125874A8A66A0300C9E8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +103,9 @@
 		AE9563F21C4488A600379A5E /* TuneInStation */ = {
 			isa = PBXGroup;
 			children = (
+				AE9564181C448B1300379A5E /* General */,
 				AE9563F61C4488A600379A5E /* AppDelegate.h */,
 				AE9563F71C4488A600379A5E /* AppDelegate.m */,
-				AE9563F91C4488A600379A5E /* ViewController.h */,
-				AE9563FA1C4488A600379A5E /* ViewController.m */,
-				AE9563FC1C4488A600379A5E /* Main.storyboard */,
 				AE9563FF1C4488A600379A5E /* Assets.xcassets */,
 				AE9564011C4488A600379A5E /* LaunchScreen.storyboard */,
 				AE9564041C4488A600379A5E /* Info.plist */,
@@ -98,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				AE9563F41C4488A600379A5E /* main.m */,
+				AE95641B1C448B9B00379A5E /* TuneInStation-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -111,6 +132,15 @@
 			path = TuneInStationTests;
 			sourceTree = "<group>";
 		};
+		AE9564181C448B1300379A5E /* General */ = {
+			isa = PBXGroup;
+			children = (
+				AE9564191C448B4D00379A5E /* CommonDefine.h */,
+				AE95641A1C448B4D00379A5E /* ValueKeyDefine.h */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE9564121C4488A600379A5E /* Build configuration list for PBXNativeTarget "TuneInStation" */;
 			buildPhases = (
+				7D90B7D8B5CDDCC3B921CC33 /* Check Pods Manifest.lock */,
 				AE9563EC1C4488A600379A5E /* Sources */,
 				AE9563ED1C4488A600379A5E /* Frameworks */,
 				AE9563EE1C4488A600379A5E /* Resources */,
+				933812EBA19E09B1CA97095C /* Embed Pods Frameworks */,
+				21AE080F5AC05130E190D3DA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,7 +226,6 @@
 			files = (
 				AE9564031C4488A600379A5E /* LaunchScreen.storyboard in Resources */,
 				AE9564001C4488A600379A5E /* Assets.xcassets in Resources */,
-				AE9563FE1C4488A600379A5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,12 +238,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21AE080F5AC05130E190D3DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D90B7D8B5CDDCC3B921CC33 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		933812EBA19E09B1CA97095C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AE9563EC1C4488A600379A5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE9563FB1C4488A600379A5E /* ViewController.m in Sources */,
 				AE9563F81C4488A600379A5E /* AppDelegate.m in Sources */,
 				AE9563F51C4488A600379A5E /* main.m in Sources */,
 			);
@@ -236,14 +315,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AE9563FC1C4488A600379A5E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE9563FD1C4488A600379A5E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AE9564011C4488A600379A5E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -337,9 +408,12 @@
 		};
 		AE9564131C4488A600379A5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E0404CC156D308EC44DE0B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "TuneInStation/TuneInStation-Prefix.pch";
 				INFOPLIST_FILE = TuneInStation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZL.TuneInStation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,9 +422,12 @@
 		};
 		AE9564141C4488A600379A5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2176FE72E828440407DAABF6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "TuneInStation/TuneInStation-Prefix.pch";
 				INFOPLIST_FILE = TuneInStation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZL.TuneInStation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -400,6 +477,7 @@
 				AE9564141C4488A600379A5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE9564151C4488A600379A5E /* Build configuration list for PBXNativeTarget "TuneInStationTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +486,7 @@
 				AE9564171C4488A600379A5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
