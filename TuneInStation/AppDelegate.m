@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setUpWindow];
+    [self setUpNavigationBarStyle];
+    [self setUpMainView];
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -41,5 +47,31 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)setUpWindow
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)setUpNavigationBarStyle
+{
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.227f green:0.133f blue:0.314f alpha:1.00f]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setOpaque:YES];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+- (void)setUpMainView
+{
+    MainTableViewController *main = [[MainTableViewController alloc] init];
+    main.isRoot = YES;
+    UINavigationController *root = [[UINavigationController alloc] initWithRootViewController:main];
+    self.window.rootViewController = root;
+    [self.window makeKeyAndVisible];
+}
+
 
 @end

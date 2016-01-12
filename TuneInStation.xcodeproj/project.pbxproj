@@ -12,6 +12,11 @@
 		AE9564001C4488A600379A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9563FF1C4488A600379A5E /* Assets.xcassets */; };
 		AE9564031C4488A600379A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9564011C4488A600379A5E /* LaunchScreen.storyboard */; };
 		AE95640E1C4488A600379A5E /* TuneInStationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE95640D1C4488A600379A5E /* TuneInStationTests.m */; };
+		AE9564221C448ED300379A5E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9564201C448ED300379A5E /* MainTableViewController.m */; };
+		AE9564231C448ED300379A5E /* MainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9564211C448ED300379A5E /* MainTableViewController.xib */; };
+		AE9564291C44904200379A5E /* stationFetchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9564281C44904200379A5E /* stationFetchManager.m */; };
+		AE9564311C44964000379A5E /* stationCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9564301C44964000379A5E /* stationCategory.m */; };
+		AE9564341C44C93A00379A5E /* station.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9564331C44C93A00379A5E /* station.m */; };
 		F911BBCCF46E932128F2B8C6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F85E175587FCCC262F25851 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +47,15 @@
 		AE9564191C448B4D00379A5E /* CommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
 		AE95641A1C448B4D00379A5E /* ValueKeyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueKeyDefine.h; sourceTree = "<group>"; };
 		AE95641B1C448B9B00379A5E /* TuneInStation-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TuneInStation-Prefix.pch"; sourceTree = "<group>"; };
+		AE95641F1C448ED300379A5E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTableViewController.h; path = VCs/MainTableViewController.h; sourceTree = "<group>"; };
+		AE9564201C448ED300379A5E /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTableViewController.m; path = VCs/MainTableViewController.m; sourceTree = "<group>"; };
+		AE9564211C448ED300379A5E /* MainTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTableViewController.xib; path = VCs/MainTableViewController.xib; sourceTree = "<group>"; };
+		AE9564271C44904200379A5E /* stationFetchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stationFetchManager.h; path = Modal/stationFetchManager.h; sourceTree = "<group>"; };
+		AE9564281C44904200379A5E /* stationFetchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = stationFetchManager.m; path = Modal/stationFetchManager.m; sourceTree = "<group>"; };
+		AE95642F1C44964000379A5E /* stationCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stationCategory.h; path = Modal/stationCategory.h; sourceTree = "<group>"; };
+		AE9564301C44964000379A5E /* stationCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = stationCategory.m; path = Modal/stationCategory.m; sourceTree = "<group>"; };
+		AE9564321C44C93A00379A5E /* station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = station.h; path = Modal/station.h; sourceTree = "<group>"; };
+		AE9564331C44C93A00379A5E /* station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = station.m; path = Modal/station.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,9 @@
 		AE9563F21C4488A600379A5E /* TuneInStation */ = {
 			isa = PBXGroup;
 			children = (
+				AE95641E1C448DEE00379A5E /* Controller */,
+				AE95641D1C448DDB00379A5E /* View */,
+				AE95641C1C448DCF00379A5E /* Modal */,
 				AE9564181C448B1300379A5E /* General */,
 				AE9563F61C4488A600379A5E /* AppDelegate.h */,
 				AE9563F71C4488A600379A5E /* AppDelegate.m */,
@@ -139,6 +156,36 @@
 				AE95641A1C448B4D00379A5E /* ValueKeyDefine.h */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		AE95641C1C448DCF00379A5E /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				AE9564271C44904200379A5E /* stationFetchManager.h */,
+				AE9564281C44904200379A5E /* stationFetchManager.m */,
+				AE95642F1C44964000379A5E /* stationCategory.h */,
+				AE9564301C44964000379A5E /* stationCategory.m */,
+				AE9564321C44C93A00379A5E /* station.h */,
+				AE9564331C44C93A00379A5E /* station.m */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		AE95641D1C448DDB00379A5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AE95641E1C448DEE00379A5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE95641F1C448ED300379A5E /* MainTableViewController.h */,
+				AE9564201C448ED300379A5E /* MainTableViewController.m */,
+				AE9564211C448ED300379A5E /* MainTableViewController.xib */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE9564031C4488A600379A5E /* LaunchScreen.storyboard in Resources */,
+				AE9564231C448ED300379A5E /* MainTableViewController.xib in Resources */,
 				AE9564001C4488A600379A5E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,8 +339,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9564341C44C93A00379A5E /* station.m in Sources */,
 				AE9563F81C4488A600379A5E /* AppDelegate.m in Sources */,
 				AE9563F51C4488A600379A5E /* main.m in Sources */,
+				AE9564221C448ED300379A5E /* MainTableViewController.m in Sources */,
+				AE9564311C44964000379A5E /* stationCategory.m in Sources */,
+				AE9564291C44904200379A5E /* stationFetchManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
