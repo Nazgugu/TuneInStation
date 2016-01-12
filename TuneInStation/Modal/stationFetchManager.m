@@ -60,7 +60,7 @@
                     }
                     block(categoryList, nil);
                 }
-                NSLog(@"%@",responseObject);
+//                NSLog(@"%@",responseObject);
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //                NSLog(@"failed %@",error);
@@ -89,6 +89,7 @@
             [manager.operationQueue cancelAllOperations];
             [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
             NSString *theURLString = [urlString stringByAppendingString:@"&render=json"];
+            NSLog(@"URL string: %@",theURLString);
             NSURL *url = [NSURL URLWithString:theURLString];
             [manager GET:url.absoluteString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -113,25 +114,47 @@
                             }
                             [finalResultsArray addObject:sectionStationArray];
                         }
-                        block(finalResultsArray, sectionTitleArray, [[responseObject objectForKey:kResultHead] objectForKey:kResultTitle], YES, nil);
+                        block(finalResultsArray, sectionTitleArray, [[responseObject objectForKey:kResultHead] objectForKey:kResultTitle], NO, nil);
                     }
                     else
                     {
                         //this case it is categories
-                        NSMutableArray *categoryList = [[NSMutableArray alloc] init];
-                        for (NSDictionary *jsDict in rawResults)
+                        if (rawResults.count > 0)
                         {
-                            stationCategory *stationTypes = [[stationCategory alloc] initWithJSONObject:jsDict];
-                            [categoryList addObject:stationTypes];
+                            NSDictionary *rawDict = [rawResults objectAtIndex:0];
+                            NSString *element = [rawDict objectForKey:kCategoryElement];
+                            if ([element isEqualToString:@"audio"])
+                            {
+                                NSMutableArray *stationArr = [[NSMutableArray alloc] init];
+                                for (NSDictionary *rawStation in rawResults)
+                                {
+                                    station *theStation = [[station alloc] initWithStationDict:rawStation];
+                                    [stationArr addObject:theStation];
+                                }
+                                block(stationArr, @[@""], nil, NO, nil);
+                            }
+                            else
+                            {
+                                NSMutableArray *categoryList = [[NSMutableArray alloc] init];
+                                for (NSDictionary *jsDict in rawResults)
+                                {
+                                    stationCategory *stationTypes = [[stationCategory alloc] initWithJSONObject:jsDict];
+                                    [categoryList addObject:stationTypes];
+                                }
+                                block(categoryList, nil, [[responseObject objectForKey:kResultHead] objectForKey:kResultTitle], YES, nil);
+                            }
                         }
-                        block(categoryList, nil, [[responseObject objectForKey:kResultHead] objectForKey:kResultTitle], YES, nil);
+                        else
+                        {
+                            block([NSArray new], nil, nil, YES, nil);
+                        }
                     }
                 }
                 else
                 {
                     block([NSArray new], nil, nil, YES, nil);
                 }
-                NSLog(@"%@",responseObject);
+//                NSLog(@"%@",responseObject);
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 //                NSLog(@"failed %@",error);

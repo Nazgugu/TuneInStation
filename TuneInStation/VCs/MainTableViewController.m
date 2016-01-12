@@ -211,7 +211,10 @@ typedef NS_OPTIONS(NSInteger, tableType)
             else
             {
                 self.tableType = tableTypeStations;
-                self.title = title;
+                if (title)
+                {
+                    self.title = title;
+                }
                 [self.sectionsArr addObjectsFromArray:sectionArray];
                 [self.resultsArr addObjectsFromArray:results];
             }
@@ -306,8 +309,15 @@ typedef NS_OPTIONS(NSInteger, tableType)
     }
     else
     {
-        NSArray *stationsArr = [self.resultsArr objectAtIndex:section];
-        return stationsArr.count;
+        if (self.sectionsArr.count > 1)
+        {
+            NSArray *stationsArr = [self.resultsArr objectAtIndex:section];
+            return stationsArr.count;
+        }
+        else
+        {
+            return self.resultsArr.count;
+        }
     }
 }
 
@@ -325,7 +335,14 @@ typedef NS_OPTIONS(NSInteger, tableType)
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 64.0f;
+    if (self.tableType == tableTypeCategory)
+    {
+        return 64.0f;
+    }
+    else
+    {
+        return 90.0f;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -349,20 +366,70 @@ typedef NS_OPTIONS(NSInteger, tableType)
     {
         if (!cell)
         {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:mainTableCellID];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mainTableCellID];
         }
         cell.backgroundColor = [UIColor blackColor];
-        cell.textLabel.textColor = [UIColor whiteColor];
-        cell.textLabel.textAlignment = NSTextAlignmentLeft;
-        cell.detailTextLabel.textColor = [UIColor lightTextColor];
-        cell.detailTextLabel.textAlignment = NSTextAlignmentLeft;
-        NSArray *stations = [self.resultsArr objectAtIndex:indexPath.section];
-        station *theStation = [stations objectAtIndex:indexPath.row];
-        cell.textLabel.text = [theStation getStationTitle];
-        cell.detailTextLabel.text = [theStation getStationSubTitle];
-        [cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
-        cell.imageView.clipsToBounds = YES;
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[theStation getImageURLString]] placeholderImage:[UIImage imageNamed:@""]];
+        
+        for (UIView *view in cell.contentView.subviews)
+        {
+            [view removeFromSuperview];
+        }
+        
+        UIImageView *stationImage = [[UIImageView alloc] initWithFrame:CGRectMake(15, 20, 50, 50)];
+        stationImage.contentMode = UIViewContentModeScaleAspectFill;
+        stationImage.clipsToBounds = YES;
+        [cell.contentView addSubview:stationImage];
+        
+        UILabel *titleTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(stationImage.frame.origin.x + stationImage.frame.size.width + 20, 20, SCREEN_WIDTH - (stationImage.frame.origin.x + stationImage.frame.size.width + 20), 40)];
+        titleTextLabel.textColor = [UIColor whiteColor];
+        titleTextLabel.textAlignment = NSTextAlignmentLeft;
+        titleTextLabel.font = [UIFont systemFontOfSize:18.0f];
+        
+        [cell.contentView addSubview:titleTextLabel];
+        
+        UILabel *subtitleTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(stationImage.frame.origin.x + stationImage.frame.size.width + 20, 20 + titleTextLabel.frame.size.height, SCREEN_WIDTH - (stationImage.frame.origin.x + stationImage.frame.size.width + 20), 20)];
+        subtitleTextLabel.textColor = [UIColor lightGrayColor];
+        subtitleTextLabel.textAlignment = NSTextAlignmentLeft;
+        subtitleTextLabel.font = [UIFont systemFontOfSize:12.0f];
+        
+        [cell.contentView addSubview:subtitleTextLabel];
+
+        
+        station *theStation;
+        if (self.sectionsArr.count > 1)
+        {
+            NSArray *stations = [self.resultsArr objectAtIndex:indexPath.section];
+            theStation = [stations objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            theStation = [self.resultsArr objectAtIndex:indexPath.row];
+        }
+        if ([theStation getStationTitle])
+        {
+            titleTextLabel.text = [theStation getStationTitle];
+        }
+        else
+        {
+            titleTextLabel.text = @"No Title";
+        }
+        if ([theStation getStationSubTitle])
+        {
+            subtitleTextLabel.text = [theStation getStationSubTitle];
+        }
+        else
+        {
+            subtitleTextLabel.text = @"No Subtitle";
+        }
+        if ([theStation getImageURLString])
+        {
+            [stationImage sd_setImageWithURL:[NSURL URLWithString:[theStation getImageURLString]] placeholderImage:[UIImage imageNamed:@"placeHolder"]];
+        }
+        else
+        {
+            [stationImage setImage:[UIImage imageNamed:@"placeHolder"]];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     return cell;
@@ -372,7 +439,12 @@ typedef NS_OPTIONS(NSInteger, tableType)
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.tableType == tableTypeCategory)
+    {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        MainTableViewController *childrenVC = [[MainTableViewController alloc] initWithCategory:[self.resultsArr objectAtIndex:indexPath.row]];
+        [self.navigationController pushViewController:childrenVC animated:YES];
+    }
 }
 
 

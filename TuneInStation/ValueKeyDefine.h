@@ -25,7 +25,7 @@
 
 //station
 #define kStationTitle           @"text"
-#define kStationSubTitle        @"subText"
+#define kStationSubTitle        @"subtext"
 #define kStationImageURL        @"image"
 
 
